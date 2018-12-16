@@ -10,8 +10,8 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    input = input.toLowerCase()
-    if (input.endsWith(''))
+    var re = /[\d,\/,\.]/gi;
+    result = input.match(re);
     return result;
   };
   
