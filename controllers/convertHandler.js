@@ -10,7 +10,8 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    
+    input = input.toLowerCase()
+    if (input.endsWith(''))
     return result;
   };
   
