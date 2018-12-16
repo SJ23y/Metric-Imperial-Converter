@@ -12,6 +12,7 @@ function ConvertHandler() {
     var result;
     var re = /[\d,\/,\.]/gi;
     result = input.match(re);
+    result = result.join('');
     return result;
   };
   
