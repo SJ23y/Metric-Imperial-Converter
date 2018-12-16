@@ -13,12 +13,15 @@ function ConvertHandler() {
     var re = /[\d,\/,\.]/gi;
     result = input.match(re);
     result = result.join('');
+    result = eval(result);
     return result;
   };
   
   this.getUnit = function(input) {
     var result;
-    
+    var re = /[galbskmi]/gi;
+    result = input.match(re);
+    result = result.join('');
     return result;
   };
   
