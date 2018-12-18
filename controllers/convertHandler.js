@@ -30,13 +30,24 @@ function ConvertHandler() {
     switch (initUnit) {
       case 'gal':
         result = 'L'
+        break
       case 'L':
         result = 'gal'
+        break
       case 'mi':
         result = 'km'
+        break
       case 'km':
         result = 'mi'
-      case 
+        break
+      case 'lbs':
+        result = 'kg'
+        break
+      case 'kg':
+        result = 'lbs'
+        break
+      default:
+        result = ''
                     }
     return result;
   };
@@ -52,7 +63,28 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
-    
+    switch (initUnit) {
+      case 'gal':
+        result = initNum * galToL;
+        break
+      case 'L':
+        result = initNum / galToL;
+        break
+      case 'mi':
+        result = initNum * miToKm;
+        break
+      case 'km':
+        result = initNum / miToKm;
+        break
+      case 'lbs':
+        result = initNum * lbsToKg;
+        break
+      case 'kg':
+        result = initNum / lbsToKg;
+        break
+      default:
+        result = ''
+                    }
     return result;
   };
   
