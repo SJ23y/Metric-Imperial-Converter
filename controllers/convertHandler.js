@@ -89,7 +89,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    returnNum = 0;
+    returnNum = parseInt(returnNum * 100000)/100000;
     var result = initNum + " " + initUnit + " converts to " + returnNum + " " + returnUnit;
     
     return result;
