@@ -27,7 +27,17 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     var result;
-    
+    switch (initUnit) {
+      case 'gal':
+        result = 'L'
+      case 'L':
+        result = 'gal'
+      case 'mi':
+        result = 'km'
+      case 'km':
+        result = 'mi'
+      case 
+                    }
     return result;
   };
 
