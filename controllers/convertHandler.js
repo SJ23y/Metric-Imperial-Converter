@@ -89,7 +89,8 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
+    returnNum = 0;
+    var result = initNum + " " + initUnit + " converts to " + returnNum + " " + returnUnit;
     
     return result;
   };
