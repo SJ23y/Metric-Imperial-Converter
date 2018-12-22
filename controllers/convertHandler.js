@@ -12,8 +12,9 @@ function ConvertHandler() {
     var result;
     var re = /[\d,\/,\.]/gi;
     result = input.match(re);
+    if (!result) {result = [1]};
     result = result.join('');
-    result = eval(result);
+    result = eval(result);    
     return result;
   };
   
@@ -21,7 +22,7 @@ function ConvertHandler() {
     var result;
     var re = /[galbskmi]/gi;
     result = input.match(re);
-    result = result.join('');
+    result = result.join('');    
     return result;
   };
   
