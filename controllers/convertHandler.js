@@ -11,7 +11,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     var re = /[\d,\/,\.]/gi;
-    result = input.match(re);
+    result = input.match(re);    
     if (!result) {result = [1]};
     result = result.join('');
     result = eval(result);    
@@ -20,7 +20,7 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-    var re = /[galbskmi]/gi;
+    var re = /gal|L|kg|lbs|km|mi/gi;
     result = input.match(re);
     result = result.join('');    
     return result;
@@ -48,7 +48,7 @@ function ConvertHandler() {
         result = 'lbs'
         break
       default:
-        result = ''
+        result = 'invalid unit'
                     }
     return result;
   };
