@@ -9,8 +9,7 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
-    result.split([a-zA-Z])
+    var result = input.split(/[a-zA-Z]/,1)[0]; 
     var re = /[\d\/\.]/gi;
     result = input.match(re);    
     if (!result) {result = [1]};
