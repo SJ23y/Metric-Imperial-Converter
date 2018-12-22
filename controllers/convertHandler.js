@@ -10,6 +10,7 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
+    result.split([a-zA-Z])
     var re = /[\d\/\.]/gi;
     result = input.match(re);    
     if (!result) {result = [1]};
@@ -20,8 +21,9 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-    var re = /gal|L|kg|lbs|km|mi/gi;
+    var re = /gal$|L$|kg$|lbs$|km$|mi$/gi;
     result = input.match(re);
+    if (!result) {return ""};
     result = result.join('');    
     return result;
   };
