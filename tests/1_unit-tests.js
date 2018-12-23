@@ -23,28 +23,33 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      var input = '5.6lbs';
+      assert.equal(convertHandler.getNum(input), 5.6);
+      done();
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+      var input = '1/2km';
+      assert.equal(convertHandler.getNum(input), 0.5);
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '1.5/0.5L';
+      assert.equal(convertHandler(input), 3);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '5/4/2km';
+      assert.equal(convertHandler(input), 'invalid number');
+      done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      var input = 'kg';
+      assert.equal(convertHandler(input), 1);
+      done();
     }); 
     
   });
