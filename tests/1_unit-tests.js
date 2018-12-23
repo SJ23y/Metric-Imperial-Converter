@@ -121,21 +121,21 @@ suite('Unit Tests', function(){
       var input = [5, 'km'];
       var expected = 3.1068559612;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
-      /done();
+      done();
     });
     
     test('Lbs to Kg', function(done) {
-      var input = [5, 'gal'];
-      var expected = 3.1068559612;
+      var input = [5, 'lbs'];
+      var expected = 2.26796185;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
-      //done();
+      done();
     });
     
     test('Kg to Lbs', function(done) {
-      var input = [5, 'gal'];
-      var expected = 18.9271;
+      var input = [5, 'kg'];
+      var expected = 11.023113109;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
-      //done();
+      done();
     });
     
   });
