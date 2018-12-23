@@ -36,19 +36,19 @@ suite('Unit Tests', function(){
     
     test('Fractional Input w/ Decimal', function(done) {
       var input = '1.5/0.5L';
-      assert.equal(convertHandler(input), 3);
+      assert.equal(convertHandler.getNum(input), 3);
       done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
       var input = '5/4/2km';
-      assert.equal(convertHandler(input), 'invalid number');
+      assert.equal(convertHandler.getNum(input), 'invalid number');
       done();
     });
     
     test('No Numerical Input', function(done) {
       var input = 'kg';
-      assert.equal(convertHandler(input), 1);
+      assert.equal(convertHandler.getNum(input), 1);
       done();
     }); 
     
@@ -59,14 +59,15 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        //assert
+        assert.equal(convertHandler.getUnit(ele), ele);
       });
       done();
     });
     
     test('Unknown Unit Input', function(done) {
-      
-      //done();
+      var input = 'something';
+      assert.equal(convertHandler.getUnit(input), 'invalid unit')
+      done();
     });  
     
   });
