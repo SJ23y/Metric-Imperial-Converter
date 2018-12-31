@@ -10,7 +10,7 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result = input.split(/[a-zA-Z]/,1)[0]; 
-    var re = /\d+\.?\d+|\d+\.?\d+\/?\d+\.?\d+/;
+    var re = /\d+\.?\d+|\d+\.?\d*\/{1}\d+\.?\d*/;
     result = input.match(re);    
     if (!result) {result = 'invalid number';};
     result = result.join('');
