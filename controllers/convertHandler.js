@@ -11,9 +11,9 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result = input.split(/[a-zA-Z]/,1)[0];
     if (result == "") {return 1;}
-    var re = /\d+\.?\d*\/{1}\d+\.?\d*(?!\/)|\d+\.?\d+/;
+    var re = /^\d+\.?\d*\/{1}\d+\.?\d*(?!\/)|\d+\.?\d+/;
     result = input.match(re);    
-    if (result == null) {result = 'invalid number';};
+    if (result == null) {return 'invalid number';}
     result = result.join('');
     result = eval(result);    
     return result;
@@ -23,18 +23,18 @@ function ConvertHandler() {
     var result;
     var re = /gal$|L$|kg$|lbs$|km$|mi$/gi;
     result = input.match(re);
-    if (!result) {return ""};
+    if (!result) {return 'invalid unit'};
     result = result.join('');    
     return result;
   };
   
   this.getReturnUnit = function(initUnit) {
     var result;
-    switch (initUnit) {
+    switch (initUnit.toLowerCase()) {
       case 'gal':
-        result = 'L'
+        result = 'l'
         break
-      case 'L':
+      case 'l':
         result = 'gal'
         break
       case 'mi':
