@@ -9,11 +9,11 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result = input.split(/[a-zA-Z]/,1)[0]; 
-    var re = /^\d+\.?\d*\/{1}\d+\.?\d*$|\d+\.?\d+/m;
-    result = input.match(re);
-    console.log(result);
-    if (!result) {result = 'invalid number';};
+    var result = input.split(/[a-zA-Z]/,1)[0];
+    if (result == "") {return 1;}
+    var re = /\d+\.?\d*\/{1}\d+\.?\d*(?!\/)|\d+\.?\d+/;
+    result = input.match(re);    
+    if (result == null) {result = 'invalid number';};
     result = result.join('');
     result = eval(result);    
     return result;
