@@ -11,7 +11,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result = input.split(/[a-zA-Z]/,1)[0];
     if (result == "") {return 1;}
-    var re = /^\d+\.?\d*\/{1}\d+\.?\d+(?!\/)|^\d+\.?\d+(?!\/)/;
+    var re = /^\d+\.?\d*\/{1}\d+\.\d+(?!\/)|^\d+\.?\d*\/{1}\d+(?![\/\.])|^\d+\.?\d+(?!\/)/;
     result = input.match(re);    
     if (result == null) {return 'invalid number';}
     result = result.join('');
