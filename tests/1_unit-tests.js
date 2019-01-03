@@ -88,7 +88,8 @@ suite('Unit Tests', function(){
   suite('Function convertHandler.spellOutUnit(unit)', function() {
     
     test('For Each Valid Unit Inputs', function(done) {
-      //see above example for hint
+      var unit = 'unit';
+      assert.equal(convertHandler.spellOutUnit(unit), unit);
       done();
     });
     
@@ -104,8 +105,8 @@ suite('Unit Tests', function(){
     });
     
     test('L to Gal', function(done) {
-      var input = [18.9271, 'l'];
-      var expected = 5;
+      var input = [5, 'l'];
+      var expected = 1.32086;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       done();
     });
