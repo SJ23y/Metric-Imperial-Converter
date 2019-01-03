@@ -93,6 +93,9 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+    if (initNum == 'invalid number' && initUnit== 'invalid unit') {return 'invalid number and unit';}
+    if (initNum == 'invalid number') {return 'invalid number';}
+    if (initUnit== 'invalid unit') {return 'invalid unit';}    
     returnNum = parseInt(returnNum * 100000)/100000;
     var result = initNum + " " + initUnit + " converts to " + returnNum + " " + returnUnit;
     

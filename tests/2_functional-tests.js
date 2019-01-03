@@ -42,8 +42,7 @@ suite('Functional Tests', function() {
           assert.equal(res.body.initNum, 32);
           assert.equal(res.body.initUnit, 'invalid unit');          
           done();
-        })
-        
+        });        
       });
       
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
@@ -56,8 +55,7 @@ suite('Functional Tests', function() {
           assert.equal(res.body.initUnit, 'kg');
           assert.equal(res.body.returnUnit, 'lbs');
           done();
-        })
-        
+        });        
       });  
       
       test('Convert 3/7.2/4kilomegagram (invalid number and unit)', function(done) {
@@ -69,12 +67,21 @@ suite('Functional Tests', function() {
           assert.equal(res.body.initNum, 'invalid number');
           assert.equal(res.body.initUnit, 'invalid unit');
           done();
-        })
-        //done();
+        });        
       });
       
       test('Convert kg (no number)', function(done) {
-        
+        chai.request(server)
+        .get('/api/convert')
+        .query({input: 'kg'})
+        .end(function(err,res) {
+          assert.equal(res.status, 200);
+          assert.equal(res.body.initNum, 1);
+          assert.equal(res.body.initUnit, 'kg');
+          assert.approximately(res.body.returnNum, 2.20462, 0.1);
+          assert.equal(res.body.returnUnit, 'lbs');
+          done();
+        });
         //done();
       });
       
