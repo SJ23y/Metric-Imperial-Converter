@@ -22,8 +22,8 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     var result;
     var re = /gal$|L$|kg$|lbs$|km$|mi$/gi;
-    result = input.match(re);
-    if (!result) {return 'invalid unit'};
+    result = input.match(re);    
+    if (result == null) {return 'invalid unit'};
     result = result.join('');    
     return result;
   };
